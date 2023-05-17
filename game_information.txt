@@ -1,0 +1,37 @@
+Playing Area:
+Authentication
+Authorization
+Message forwarding
+When the game started, no new players are accepted
+Key pair for signing messages
+Logs all events with following format: sequence, timestamp, hash(prev_entry),text, signature  
+Player and server can request this log
+
+User:
+One of the players is the caller
+sequence number (the caller has number 0), public key, nickname
+asymmetrical key pair
+Symmetric key for encrypting the shuffled deck
+
+Card Generation:
+each player creates his own N/4 cards
+N is the total amount of numbers in the deck
+The card of each player is signed and committed to the caller
+
+Shuffling the deck:
+the caller shuffles N cards and encrypts each number with a symmetric key, sign it and post it to the playing area
+Each player will take the deck (in the sequence order) -> encrypt -> shuffle -> sign(with player number) -> post to playing area
+After every player shuffled, the caller will sign the deck again 
+Then all the symmetric keys are published to all players
+Each player can now check if everybody shuffled correctly 
+
+Digital signatures and exchanged data
+all messages must be signed before transmission
+public keys used to verify players’ signatures must be conveyed to the playing area during the registration of a player for a game
+The caller will publish the game outcome (signed)
+All public key from all players are available in the playing area
+
+Caller:
+is trusted not to cheat
+Has the power of detecting cheaters and disqualify them
+Has the power to abord a game

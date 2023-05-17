@@ -1,0 +1,15 @@
+import os
+
+MQTT_ADDRESS = os.environ.get('BINGO_MQTT_ADDRESS', 'localhost')
+MQTT_PORT = os.environ.get('BINGO_MQTT_PORT', 1883)
+DECK_SIZE = 100
+CARD_SIZE = int(DECK_SIZE / 4)
+PLAYERS_AMOUNT = 10
+DEFAULT_CITIZEN_CARD_PIN = '1111'
+PLAYER_CHEAT_CHANCE = 0.0005
+
+PKCS7_BLOCK_SIZE = 128
+
+PLAYING_AREA_QUEUE = 'playing_area_queue'
+PLAYING_AREA = 'playing_area'
+

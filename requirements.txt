@@ -1,0 +1,6 @@
+paho-mqtt==1.6.1
+cryptography==38.0.4
+argparse==1.4.0
+rsa==4.9
+pykcs11==1.5.11
+chardet==5.1.0
